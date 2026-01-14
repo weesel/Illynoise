@@ -2,37 +2,40 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Base MVP</title>
+    <title>Space Base OS</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
 </head>
 <body>
-    <div id="ui-layer">
-        <div id="status">Status: Online - Klicke zum Laufen</div>
-        <button onclick="addTerminal()">+ Neues Terminal (Blockly-Sim)</button>
-    </div>
+    <div id="game-ui">
+        <canvas id="baseCanvas"></canvas>
+        
+        <div id="hud">
+            <h1>Space Base Command</h1>
+            <button onclick="toggleBlockly()">🛠 Bau-Modus (Blockly)</button>
+        </div>
 
-    <canvas id="gameCanvas"></canvas>
-
-    <div id="dialog-box" class="hidden">
-        <div id="avatar">🤖</div>
-        <div id="dialog-content">
-            <p id="dialog-text"></p>
-            <div id="ai-controls" class="hidden">
-                <input type="text" id="ai-input" placeholder="Frag den Agenten...">
-                <button onclick="sendToAI()">Senden</button>
-            </div>
+        <div id="chat-bubble" class="hidden">
+            <div class="npc-info">🤖 KI-Agent</div>
+            <p id="response-text">Bereit zum Scannen...</p>
+            <input type="text" id="user-input" placeholder="Befehl eingeben...">
         </div>
     </div>
 
-    <div id="app-window" class="hidden">
-        <div id="window-header">
-            <span id="window-title">App Terminal</span>
-            <button onclick="closeApp()">SCHLIESSEN [X]</button>
-        </div>
-        <iframe id="app-frame" src=""></iframe>
+    <div id="blockly-editor" class="hidden">
+        <div id="blockly-div" style="height: 480px; width: 600px;"></div>
+        <button onclick="executeCode()">Code auf Basis anwenden</button>
+        <button onclick="toggleBlockly()">Schließen</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="app-overlay" class="hidden">
+        <div class="window-bar">
+            <span id="app-title">Web Terminal</span>
+            <button onclick="closeApp()">X</button>
+        </div>
+        <iframe id="app-frame"></iframe>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
