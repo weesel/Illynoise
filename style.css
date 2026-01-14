@@ -1,0 +1,18 @@
+body { margin: 0; background: #050505; color: white; font-family: 'Courier New', monospace; overflow: hidden; }
+#game-container { position: relative; width: 100vw; height: 100vh; }
+canvas { display: block; background: #111; }
+
+/* Dialog-Box unten wie in Harvest Moon */
+#dialog-box {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    width: 80%; height: 100px; background: rgba(0, 0, 50, 0.9);
+    border: 3px solid #00f2ff; padding: 15px; border-radius: 10px;
+}
+
+/* Das Fenster für GitHub/Webseiten */
+#app-window {
+    position: absolute; top: 50px; left: 50%; transform: translateX(-50%);
+    width: 90%; height: 80%; background: white; border-radius: 10px; z-index: 10;
+}
+iframe { width: 100%; height: calc(100% - 40px); border: none; }
+.hidden { display: none; }
