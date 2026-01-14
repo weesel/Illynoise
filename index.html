@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Base - 2D Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="dialog-box" class="hidden">
+            <p id="dialog-text"></p>
+            <input type="text" id="ai-input" class="hidden" placeholder="Frag den Agenten...">
+        </div>
+    </div>
+
+    <div id="app-window" class="hidden">
+        <div id="window-header">
+            <span id="window-title">Web App</span>
+            <button onclick="closeApp()">X</button>
+        </div>
+        <iframe id="app-frame" src=""></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
